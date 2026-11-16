@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="Afia Labiba — Computer Science graduate, aspiring researcher in Medical AI, multimodal learning and digital health.">
+<title>Afia Labiba | Research & Technology</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#0b1020;
+  --surface:#12182d;
+  --surface2:#19172f;
+  --white:#f7f4ff;
+  --muted:#aaa9c3;
+  --purple:#8242f4;
+  --violet:#a32eb7;
+  --pink:#f13cc4;
+  --softpink:#e69baa;
+  --cyan:#8bdbdb;
+  --line:rgba(194,169,255,.16);
+  --font:'Manrope',sans-serif;
+  --mono:'DM Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{
+  background:var(--bg);color:var(--white);
+  font-family:var(--font);line-height:1.7;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,90%);margin:auto}
+.gradient{
+  background:linear-gradient(110deg,#a58aff,#d14ae0,#f17acb);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.eyebrow{
+  color:#c69aff;font:11px var(--mono);
+  letter-spacing:2px;text-transform:uppercase;
+}
+.ambient{
+  position:fixed;pointer-events:none;z-index:-1;
+  width:400px;height:400px;border-radius:50%;
+  filter:blur(110px);opacity:.12;
+}
+.ambient.one{background:#812aff;top:0;right:-200px}
+.ambient.two{background:#ec35c5;top:800px;left:-240px}
+
+/* NAVIGATION */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(11,16,32,.88);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+nav{
+  height:76px;display:flex;
+  justify-content:space-between;align-items:center;
+}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800}
+.logo-mark{
+  width:39px;height:39px;border-radius:11px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,#5825bc,#ed42c6);
+  font-size:13px;box-shadow:0 0 24px #a32eb744;
+}
+.nav-links{display:flex;gap:27px;align-items:center}
+.nav-links a{font-size:12px;color:var(--muted);font-weight:700}
+.nav-links a:hover{color:#e2a2ff}
+.nav-links .contact-link{
+  border:1px solid #a32eb7;padding:9px 15px;
+  border-radius:7px;color:white;
+}
+.menu{display:none;background:none;border:0;color:white;font-size:25px}
+
+/* HERO */
+.hero{
+  min-height:650px;display:grid;
+  grid-template-columns:1.15fr .85fr;
+  align-items:center;gap:45px;padding:70px 0;
+}
+.availability{
+  display:inline-flex;align-items:center;gap:9px;
+  color:#c9c3dd;font:10px var(--mono);
+  border:1px solid var(--line);padding:8px 12px;
+  border-radius:30px;background:#17152b;
+}
+.availability i{
+  width:7px;height:7px;background:#72dfad;
+  border-radius:50%;box-shadow:0 0 10px #72dfad;
+}
+h1{
+  font-size:clamp(43px,6vw,70px);
+  line-height:1.13;letter-spacing:-3px;
+  margin:27px 0 22px;
+}
+.hero-desc{max-width:580px;color:var(--muted);font-size:15px}
+.buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn{
+  display:inline-flex;align-items:center;gap:15px;
+  padding:13px 19px;border-radius:8px;
+  font-size:12px;font-weight:800;transition:.2s;
+}
+.btn:hover{transform:translateY(-3px)}
+.primary{
+  background:linear-gradient(110deg,#8242f4,#d43acb);
+  color:white;box-shadow:0 8px 30px #8242f433;
+}
+.secondary{border:1px solid var(--line)}
+.secondary:hover{border-color:#bd70ff}
+.hero-meta{margin-top:37px;color:#85839f;font:10px var(--mono)}
+
+/* HERO VISUAL */
+.visual{
+  min-height:440px;position:relative;
+  display:grid;place-items:center;
+}
+.profile{
+  width:310px;height:350px;border-radius:20px;
+  position:relative;z-index:2;
+  background:linear-gradient(145deg,#28204d,#15152e 65%,#311c45);
+  border:1px solid #b78cff55;
+  padding:23px;display:flex;flex-direction:column;
+  justify-content:space-between;
+  box-shadow:0 25px 80px #0007,0 0 50px #9d35e51c;
+  overflow:hidden;
+}
+.profile:before{
+  content:"";position:absolute;width:260px;height:260px;
+  border:1px solid #c27aff25;border-radius:50%;
+  top:55px;left:25px;
+}
+.profile:after{
+  content:"";position:absolute;width:210px;height:210px;
+  border:1px solid #f13cc426;border-radius:50%;
+  top:80px;left:50px;
+}
+.profile-top,.profile-bottom{position:relative;z-index:2}
+.profile-top{display:flex;justify-content:space-between;font:9px var(--mono)}
+.profile-top span:last-child{color:#d99aff}
+.monogram{
+  text-align:center;position:relative;z-index:2;
+  font-size:90px;font-weight:800;letter-spacing:-9px;
+  background:linear-gradient(120deg,#c5aaff,#f05ad2);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.profile-bottom{display:flex;justify-content:space-between;align-items:center}
+.profile-bottom strong{display:block;font-size:15px}
+.profile-bottom small{font-size:10px;color:var(--muted)}
+.profile-bottom span{font-size:23px;color:#d78aff}
+.orbit{
+  position:absolute;border:1px solid #a34cda40;
+  border-radius:50%;width:440px;height:330px;
+  transform:rotate(-25deg);
+}
+.orbit.two{width:390px;height:440px;transform:rotate(35deg);border-color:#f13cc426}
+.tag{
+  position:absolute;z-index:3;padding:10px 14px;
+  background:#211a3b;border:1px solid #b58bff44;
+  border-radius:8px;font-size:10px;font-weight:700;
+  box-shadow:0 10px 30px #0005;
+}
+.tag.one{top:60px;right:-4px;color:#e7b4ff}
+.tag.two{bottom:75px;left:-12px;color:#f59bdf}
+.tag.three{bottom:28px;right:0;color:#b8b0ff}
+
+/* QUICK FACTS */
+.facts{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-block:1px solid var(--line);padding:28px 0;
+}
+.fact{padding:0 20px;border-right:1px solid var(--line)}
+.fact:first-child{padding-left:0}
+.fact:last-child{border:0}
+.fact strong{font-size:22px;display:block}
+.fact small{font-size:10px;color:var(--muted)}
+
+/* SECTIONS */
+section.content{padding:100px 0}
+.heading{margin-bottom:40px}
+.heading h2,.contact h2{
+  font-size:clamp(32px,4vw,47px);
+  letter-spacing:-2px;line-height:1.25;margin-top:13px;
+}
+.intro{color:var(--muted);font-size:13px;max-width:600px;margin-top:12px}
+.tinted{
+  background:linear-gradient(120deg,#15142b,#17152b,#21132d);
+  border-block:1px solid #a32eb71c;
+}
+.about-grid{display:grid;grid-template-columns:1.5fr .8fr;gap:65px}
+.about-main p{color:var(--muted);font-size:13px;margin-bottom:17px}
+.about-main .lead{font-size:18px;color:#e9e4f8;line-height:1.9}
+.about-main b{color:white}
+.about-note{
+  background:linear-gradient(145deg,#261b42,#17182f);
+  padding:28px;border:1px solid #a32eb744;border-radius:12px;
+  align-self:start;
+}
+.about-note .symbol{font-size:26px;color:#e09aff}
+.about-note h3{font-size:16px;margin:13px 0}
+.about-note p{font-size:12px;color:var(--muted)}
+.about-note small{display:block;color:#d48bff;font:9px var(--mono);margin-top:23px}
+
+/* INTERESTS */
+.interests{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.interest{
+  min-height:225px;padding:23px;
+  border:1px solid var(--line);border-radius:11px;
+  background:#15172c;transition:.25s;
+  position:relative;overflow:hidden;
+}
+.interest:hover{transform:translateY(-6px);border-color:#c47aff77}
+.interest .icon{font-size:27px}
+.interest h3{font-size:14px;margin:18px 0 9px;line-height:1.5}
+.interest p{font-size:11px;color:var(--muted);line-height:1.9}
+.interest .number{
+  position:absolute;right:15px;top:13px;
+  font:10px var(--mono);color:#77708f;
+}
+.purple{color:#b797ff}.pink{color:#f276d7}
+.violet{color:#c17bff}.rose{color:#e89bad}
+
+/* PROJECTS */
+.projects{display:grid;gap:15px}
+.project{
+  display:grid;grid-template-columns:125px 1fr 120px;
+  align-items:center;gap:22px;padding:27px;
+  background:#14182c;border:1px solid var(--line);
+  border-radius:12px;transition:.2s;
+}
+.project:hover{border-color:#aa66ec77;transform:translateY(-2px)}
+.project.featured{
+  background:linear-gradient(110deg,#211a3c,#17172e,#25152e);
+  border-color:#a32eb744;
+}
+.project-no{font:12px var(--mono);color:#c78cff}
+.project-no small{display:block;font-size:8px;color:#89849f;margin-top:8px}
+.project h3{font-size:19px;margin:10px 0 5px}
+.project p{font-size:11px;color:var(--muted);line-height:1.9}
+.project .subtitle{color:#e0ccef}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{
+  font:9px var(--mono);padding:4px 7px;
+  border-radius:4px;background:#8141a522;color:#d4a8ff;
+  border:1px solid #a34eb52b;
+}
+.project-art{
+  height:115px;display:grid;place-items:center;
+  position:relative;color:#d38cff;font-size:44px;
+}
+.project-art small{
+  position:absolute;bottom:0;font:8px var(--mono);
+  color:#a99bbf;letter-spacing:1px;
+}
+
+/* EXPERIENCE */
+.timeline{max-width:850px}
+.event{
+  display:grid;grid-template-columns:135px 20px 1fr;
+  gap:20px;min-height:155px;
+}
+.date{font:9px var(--mono);color:#9b91b5}
+.marker{position:relative}
+.marker:before{
+  content:"";position:absolute;top:5px;width:10px;height:10px;
+  border:2px solid #c77bff;border-radius:50%;background:var(--bg);
+}
+.marker:after{
+  content:"";position:absolute;top:19px;bottom:0;left:5px;
+  width:1px;background:var(--line);
+}
+.event:last-child .marker:after{display:none}
+.event small{font:9px var(--mono);color:#d28bff;letter-spacing:1px}
+.event h3{font-size:16px;margin:7px 0 0}
+.event h4{font-size:11px;color:#c3afd9;margin:3px 0 8px}
+.event p{font-size:11px;color:var(--muted);max-width:650px;margin-bottom:30px}
+.award{
+  display:flex;gap:16px;align-items:center;
+  border:1px solid #d79a5e44;background:#34231d66;
+  border-radius:10px;padding:19px 22px;margin-top:15px;
+}
+.award .star{font-size:25px;color:#ffc17d}
+.award strong{font-size:12px}
+.award p{font-size:10px;color:var(--muted)}
+.award small{margin-left:auto;font:9px var(--mono);color:#ffc17d}
+
+/* SKILLS */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.skill h3{font-size:13px;margin-bottom:14px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills span{
+  padding:8px 10px;border:1px solid var(--line);
+  border-radius:6px;font-size:10px;color:#c4bdd7;
+  background:#15172a;
+}
+.skill-note{font-size:10px;color:#77748f;margin-top:25px}
+
+/* CONTACT */
+.contact{
+  text-align:center;padding:90px 0 25px;
+  background:linear-gradient(120deg,#17152d,#251538,#17152d);
+  border-top:1px solid var(--line);
+}
+.contact h2{max-width:700px;margin:15px auto}
+.contact>div>p{font-size:12px;color:var(--muted);max-width:530px;margin:15px auto}
+.contact-buttons{justify-content:center;margin:30px 0 65px}
+footer{
+  border-top:1px solid var(--line);padding-top:20px;
+  display:flex;justify-content:space-between;
+  gap:15px;color:#88829e;font:9px var(--mono);
+}
+footer a{color:#d69aff}
+
+/* RESPONSIVE */
+@media(max-width:850px){
+  .hero{gap:15px}
+  .interests{grid-template-columns:repeat(2,1fr)}
+  .project{grid-template-columns:90px 1fr 80px}
+  .nav-links{gap:15px}
+}
+@media(max-width:650px){
+  .menu{display:block}
+  .nav-links{
+    display:none;position:absolute;top:76px;left:0;right:0;
+    background:#111328;padding:22px;
+    flex-direction:column;align-items:stretch;
+    border-bottom:1px solid var(--line);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{text-align:center;padding:7px}
+  .hero{grid-template-columns:1fr;padding:65px 0 40px}
+  .hero h1{letter-spacing:-2px}
+  .visual{min-height:390px;margin-top:15px}
+  .profile{width:275px;height:310px}
+  .orbit{width:350px;height:270px}
+  .orbit.two{width:320px;height:350px}
+  .facts{grid-template-columns:repeat(2,1fr);gap:20px}
+  .fact:nth-child(2){border:0}
+  .fact:nth-child(3){padding-left:0}
+  section.content{padding:70px 0}
+  .about-grid{grid-template-columns:1fr;gap:25px}
+  .project{grid-template-columns:1fr;gap:10px;padding:22px}
+  .project-art{display:none}
+  .skills{grid-template-columns:1fr;gap:24px}
+  .event{grid-template-columns:90px 15px 1fr;gap:10px}
+  .date{font-size:8px}
+  .award small{display:none}
+  footer{flex-wrap:wrap}
+  footer span:nth-child(2){width:100%;order:3}
+}
+@media(max-width:390px){
+  .interests{grid-template-columns:1fr}
+  .interest{min-height:190px}
+}
+</style>
+</head>
+
+<body>
+<div class="ambient one"></div>
+<div class="ambient two"></div>
+
+<header>
+<nav class="container">
+  <a href="#home" class="logo">
+    <span class="logo-mark">AL</span>
+    <span>Afia Labiba</span>
+  </a>
+  <button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact" class="contact-link">Contact ↗</a>
+  </div>
+</nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero container" id="home">
+  <div>
+    <div class="availability"><i></i> COMPUTER SCIENCE · MEDICAL AI · DIGITAL HEALTH</div>
+    <h1>Exploring the intersection of <span class="gradient">AI, health & technology.</span></h1>
+    <p class="hero-desc">
+      I'm Afia Labiba, a Computer Science and Engineering graduate
+      interested in building intelligent systems that translate
+      computational research into meaningful healthcare applications.
+    </p>
+    <div class="buttons">
+      <a href="#projects" class="btn primary">Explore my work ↘</a>
+      <a href="#contact" class="btn secondary">Let's connect ↗</a>
+    </div>
+    <p class="hero-meta">BASED IN BANGLADESH &nbsp; · &nbsp; RESEARCH-DRIVEN &nbsp; · &nbsp; ENGINEERING-MINDED</p>
+  </div>
+
+  <div class="visual">
+    <div class="orbit"></div>
+    <div class="orbit two"></div>
+    <div class="profile">
+      <div class="profile-top">
+        <span>AL / PORTFOLIO</span>
+        <span>✳ 2026</span>
+      </div>
+      <div class="monogram">AL.</div>
+      <div class="profile-bottom">
+        <div>
+          <strong>Afia Labiba</strong>
+          <small>Computer Science & Engineering</small>
+        </div>
+        <span>↗</span>
+      </div>
+    </div>
+    <div class="tag one">✳ Medical AI</div>
+    <div class="tag two">◈ Multimodal Learning</div>
+    <div class="tag three">⌁ Digital Health</div>
+  </div>
+</section>
+
+<!-- FACTS -->
+<div class="container facts">
+  <div class="fact"><strong>3.95<span style="font-size:12px;color:#aaa">/4.00</span></strong><small>Undergraduate CGPA</small></div>
+  <div class="fact"><strong>B.Sc.</strong><small>Computer Science & Engineering</small></div>
+  <div class="fact"><strong>BRACU</strong><small>BRAC University, Bangladesh</small></div>
+  <div class="fact"><strong>AI + Health</strong><small>Research direction</small></div>
+</div>
+
+<!-- ABOUT -->
+<section class="content container" id="about">
+  <div class="heading">
+    <span class="eyebrow">01 / ABOUT ME</span>
+    <h2>Curiosity beyond <span class="gradient">boundaries.</span></h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-main">
+      <p class="lead">
+        I am a Computer Science and Engineering graduate from
+        <b>BRAC University, Bangladesh</b>, with a CGPA of 3.95/4.00.
+        My interests lie in applying computational methods to
+        challenging problems in healthcare.
+      </p>
+      <p>
+        My academic research has introduced me to machine learning,
+        medical imaging, genetic data, multimodal representation
+        learning, and explainable AI. I am particularly interested
+        in how heterogeneous health data can be integrated to
+        support more meaningful analysis and clinical applications.
+      </p>
+      <p>
+        Beyond research, I enjoy building practical systems —
+        from embedded sensing and robotics to database-driven
+        applications and network engineering. I am interested in
+        the connection between intelligent software, physical
+        systems, and human-centered technology.
+      </p>
+    </div>
+    <aside class="about-note">
+      <span class="symbol">✳</span>
+      <h3>What drives my curiosity?</h3>
+      <p>
+        Understanding complex problems, exploring interdisciplinary
+        ideas, and developing technology that can make a practical
+        difference in people's lives.
+      </p>
+      <small>LEARN · BUILD · INVESTIGATE</small>
+    </aside>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="content tinted" id="research">
+<div class="container">
+  <div class="heading">
+    <span class="eyebrow">02 / RESEARCH INTERESTS</span>
+    <h2>Areas I want to <span class="gradient">explore.</span></h2>
+    <p class="intro">
+      My research interests connect intelligent computing,
+      healthcare, sensing technologies, and interpretable learning.
+    </p>
+  </div>
+
+  <div class="interests">
+    <article class="interest">
+      <span class="number">01</span>
+      <span class="icon purple">⌁</span>
+      <h3>Medical AI & Digital Health</h3>
+      <p>AI-enabled healthcare applications, personalized digital health, and clinically meaningful prediction systems.</p>
+    </article>
+    <article class="interest">
+      <span class="number">02</span>
+      <span class="icon pink">◈</span>
+      <h3>Multimodal Learning</h3>
+      <p>Representation learning and integration of heterogeneous data, including medical imaging and genomic information.</p>
+    </article>
+    <article class="interest">
+      <span class="number">03</span>
+      <span class="icon violet">⌘</span>
+      <h3>Wearable & Seizure Monitoring</h3>
+      <p>Intelligent sensing, continuous health monitoring, seizure detection, and wearable-based systems.</p>
+    </article>
+    <article class="interest">
+      <span class="number">04</span>
+      <span class="icon rose">◎</span>
+      <h3>Explainable AI</h3>
+      <p>Interpretable machine learning methods that connect computational predictions with understandable evidence.</p>
+    </article>
+  </div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section class="content container" id="projects">
+<div class="heading">
+  <span class="eyebrow">03 / SELECTED WORK</span>
+  <h2>Research, ideas & <span class="gradient">engineering.</span></h2>
+  <p class="intro">A selection of academic research and engineering projects.</p>
+</div>
+
+<div class="projects">
+  <article class="project featured">
+    <div class="project-no">01<small>RESEARCH PROJECT</small></div>
+    <div>
+      <div class="tags"><span>Medical AI</span><span>Multimodal Learning</span><span>Alzheimer's Disease</span></div>
+      <h3>AD-TrioCLIP</h3>
+      <p class="subtitle">A Tri-Modal Contrastive Learning Framework for Joint Modeling of Imaging-Genetic Data in Alzheimer's Disease Analysis.</p>
+      <p>
+        An interdisciplinary research project exploring shared
+        representation learning across medical imaging and genetic
+        data for Alzheimer's disease analysis, with a focus on
+        multimodal integration and explainability.
+      </p>
+      <p style="margin-top:12px;color:#d9a2f1">
+        ✦ Champion — Next Gen Ideathon, CSE Innovation Track
+      </p>
+    </div>
+    <div class="project-art">
+      ◈
+      <small>MRI + GENOMICS</small>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-no">02<small>HEALTHCARE</small></div>
+    <div>
+      <div class="tags"><span>Digital Health</span><span>Software</span></div>
+      <h3>Diabetes Lifestyle Management System</h3>
+      <p>
+        A healthcare-oriented software project focused on supporting
+        diabetes lifestyle management through a structured digital system.
+      </p>
+    </div>
+    <div class="project-art">✚</div>
+  </article>
+
+  <article class="project">
+    <div class="project-no">03<small>EMBEDDED SYSTEMS</small></div>
+    <div>
+      <div class="tags"><span>Arduino</span><span>GPS</span><span>RFID</span></div>
+      <h3>BD Autorickshaw Monitoring & Controlling System</h3>
+      <p>
+        An embedded system integrating RFID authentication,
+        GPS tracking, IR sensors, EEPROM, and PWM motor control.
+      </p>
+    </div>
+    <div class="project-art">⌁</div>
+  </article>
+
+  <article class="project">
+    <div class="project-no">04<small>ROBOTICS</small></div>
+    <div>
+      <div class="tags"><span>Robotics</span><span>IR Sensors</span><span>Pathfinding</span></div>
+      <h3>Autonomous Robotics Projects</h3>
+      <p>
+        Hands-on robotics projects, including a line-following robot
+        with obstacle sensing and an automated waste-management robot.
+      </p>
+    </div>
+    <div class="project-art">⌬</div>
+  </article>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="content tinted" id="experience">
+<div class="container">
+  <div class="heading">
+    <span class="eyebrow">04 / EXPERIENCE & EDUCATION</span>
+    <h2>My academic & <span class="gradient">professional journey.</span></h2>
+  </div>
+
+  <div class="timeline">
+    <article class="event">
+      <div class="date">2026 — PRESENT</div>
+      <div class="marker"></div>
+      <div>
+        <small>PROFESSIONAL EXPERIENCE</small>
+        <h3>Assistant Network Engineer</h3>
+        <h4>Ranks ITT Limited · Bangladesh</h4>
+        <p>
+          Working in a network operations environment, developing
+          practical experience with networking infrastructure,
+          monitoring, troubleshooting, and network-related systems.
+        </p>
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="date">UNDERGRADUATE</div>
+      <div class="marker"></div>
+      <div>
+        <small>EDUCATION</small>
+        <h3>B.Sc. in Computer Science and Engineering</h3>
+        <h4>BRAC University · Bangladesh</h4>
+        <p>
+          Graduated with a CGPA of 3.95/4.00. Academic work
+          included machine learning, biomedical applications,
+          digital systems, and software development.
+        </p>
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="date">ACADEMIC</div>
+      <div class="marker"></div>
+      <div>
+        <small>TEACHING EXPERIENCE</small>
+        <h3>Student Tutor — Digital Logic Design</h3>
+        <h4>BRAC University</h4>
+        <p>
+          Supported undergraduate learning in digital logic design,
+          strengthening foundations in digital hardware and
+          computer architecture.
+        </p>
+      </div>
+    </article>
+  </div>
+
+  <div class="award">
+    <span class="star">✦</span>
+    <div>
+      <strong>Champion — Next Gen Ideathon</strong>
+      <p>CSE Innovation Track · AD-TrioCLIP interdisciplinary project</p>
+    </div>
+    <small>ACHIEVEMENT</small>
+  </div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section class="content container" id="skills">
+<div class="heading">
+  <span class="eyebrow">05 / TECHNICAL TOOLKIT</span>
+  <h2>Technologies & <span class="gradient">methods.</span></h2>
+</div>
+
+<div class="skills">
+  <div class="skill">
+    <h3>AI & Research</h3>
+    <div class="pills">
+      <span>Machine Learning</span><span>Deep Learning</span>
+      <span>Multimodal Learning</span><span>Explainable AI</span>
+      <span>Medical Imaging</span><span>Data Analysis</span>
+    </div>
+  </div>
+  <div class="skill">
+    <h3>Software & Data</h3>
+    <div class="pills">
+      <span>Python</span><span>Flask</span>
+      <span>SQL / MySQL</span><span>Git</span>
+      <span>REST APIs</span>
+    </div>
+  </div>
+  <div class="skill">
+    <h3>Systems & Networking</h3>
+    <div class="pills">
+      <span>Computer Networks</span><span>MikroTik</span>
+      <span>Arduino</span><span>Embedded Systems</span>
+      <span>Digital Logic</span>
+    </div>
+  </div>
+</div>
+<p class="skill-note">Skills shown are a starting point; update them to reflect your current proficiency.</p>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<div class="container">
+  <span class="eyebrow">06 / GET IN TOUCH</span>
+  <h2>Let's build something <span class="gradient">meaningful.</span></h2>
+  <p>
+    Interested in research collaboration, graduate study,
+    or engineering opportunities? I'd be glad to connect.
+  </p>
+  <div class="buttons contact-buttons">
+    <a class="btn primary" href="mailto:afialabiba.02@gmail.com">Email me ↗</a>
+    <a class="btn secondary" href="www.linkedin.com/in/afia-labiba-4b2a5032b" target="_blank">LinkedIn ↗</a>
+    <a class="btn secondary" href="https://github.com/alazas" target="_blank">GitHub ↗</a>
+  </div>
+  <footer>
+    <span>© <span id="year"></span> Afia Labiba</span>
+    <span>Designed with curiosity and purpose.</span>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+</div>
+</section>
+</main>
+
+<script>
+const menuButton = document.querySelector('.menu');
+const navLinks = document.querySelector('.nav-links');
+
+menuButton.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', open);
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
